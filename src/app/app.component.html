@@ -1,52 +1,48 @@
 <!DOCTYPE html>
 <html>
 <body>
+<style>
+  html {
+    font: 20px Verdana, sans-serif;
+  }
 
-dec <input type="text" id="decCislo"> <br>
-bin <input type="radio" id="7"name="a" onclick="fun1()" value= "0111">7
-<input type="radio" id="6"name="a" onclick="fun2()" value="0110">6
-<input type="radio" id="5"name="a" onclick="fun3()" value="0101">5
-<input type="radio" id="4"name="a" onclick="fun4()" value= "0100">4
-<input type="radio" id="3"name="a" onclick="fun5()" value="0011">3
-<input type="radio" id="2"name="a" onclick="fun6()" value="0010">2
-<input type="radio" id="1"name="a" onclick="fun7()" value="0001">1
+</style>
 
+<form id="form">
+dec <input type="text" id="decCislo" name="dec"> <br>
+bin <input type="checkbox" id="7"name="bin" onclick="check()" value= "0111">7 (128)
+    <input type="checkbox" id="6"name="bin" onclick="check()" value="0110">6 (64)
+    <input type="checkbox" id="5"name="bin" onclick="check()" value="0101">5 (32)
+    <input type="checkbox" id="4"name="bin" onclick="check()" value= "0100">4 (16)
+    <input type="checkbox" id="3"name="bin" onclick="check()" value="0011">3 (8)
+    <input type="checkbox" id="2"name="bin" onclick="check()" value="0010">2 (4)
+    <input type="checkbox" id="1"name="bin" onclick="check()" value="0001">1 (2)
+    <input type="checkbox" id="0"name="bin" onclick="check()" value="0000">0 (1)
 
+</form>
 <script>
-  function fun1() {
-    var obsah = document.getElementById("7").value;
-    document.getElementById("decCislo").value = obsah;
-
   }
-  function fun2() {
-    var obsah = document.getElementById("6").value;
-    document.getElementById("decCislo").value = obsah;
 
+  function check(){
+    var checkboxes = document.getElementsByName("bin");
+    var numberOfCheckedboxes = 0;
+    for(var i = 0; i < checkboxes.length; i++)
+    {
+      if(checkboxes[i].checked)
+        numberOfCheckedboxes++;
+    }
   }
-  function fun3() {
-    var obsah = document.getElementById("5").value;
-    document.getElementById("decCislo").value = obsah;
-
-  }
-  function fun4() {
-    var obsah = document.getElementById("4").value;
-    document.getElementById("decCislo").value = obsah;
-
-  }
-  function fun5() {
-    var obsah = document.getElementById("3").value;
-    document.getElementById("decCislo").value = obsah;
-
-  }
-  function fun6() {
-    var obsah = document.getElementById("2").value;
-    document.getElementById("decCislo").value = obsah;
-
-  }
-  function fun7() {
-    var obsah = document.getElementById("1").value;
-    document.getElementById("decCislo").value = obsah;
-
+  function bin(){
+    var bin = document.getElementsByName("bin");
+    check();
+    if(check()){
+      var dec = document.getElementsByName("dec")
+      if(document.getElementsByName("dec")%2 == 0){
+        for(var i = 0; i < checkboxes.length;i++){
+          var pom = pom + 1;
+        }
+      }
+    }
   }
 
 </script>
