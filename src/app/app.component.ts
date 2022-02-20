@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {mergeWith} from "rxjs";
+
 
 @Component({
   selector: 'app-root',
@@ -8,10 +8,20 @@ import {mergeWith} from "rxjs";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'uloha1';
-  cenaKs: number = 0;
-  mnozstvo: number = 0;
-  spolu: number = 0;
+  decCislo=0;
+  sedem=128;
+  sest=64;
+  pat=32;
+  styri=16;
+  tri=8;
+  dva=4;
+  jedna=2;
+  nula=1;
 
-
+  form:FormGroup;
+  constructor() {
+    this.form=new FormGroup({
+      decCislo: new FormControl(),
+    })
+  }
 }

@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html>
 <body>
-<style>
-  html {
-    font: 20px Verdana, sans-serif;
-  }
-
-</style>
-
 <form id="form">
+
 dec <input type="text" id="decCislo" name="dec"> <br>
 bin <input type="checkbox" id="7"name="bin" onclick="check()" value= "0111">7 (128)
     <input type="checkbox" id="6"name="bin" onclick="check()" value="0110">6 (64)
@@ -20,32 +14,6 @@ bin <input type="checkbox" id="7"name="bin" onclick="check()" value= "0111">7 (1
     <input type="checkbox" id="0"name="bin" onclick="check()" value="0000">0 (1)
 
 </form>
-<script>
-  }
-
-  function check(){
-    var checkboxes = document.getElementsByName("bin");
-    var numberOfCheckedboxes = 0;
-    for(var i = 0; i < checkboxes.length; i++)
-    {
-      if(checkboxes[i].checked)
-        numberOfCheckedboxes++;
-    }
-  }
-  function bin(){
-    var bin = document.getElementsByName("bin");
-    check();
-    if(check()){
-      var dec = document.getElementsByName("dec")
-      if(document.getElementsByName("dec")%2 == 0){
-        for(var i = 0; i < checkboxes.length;i++){
-          var pom = pom + 1;
-        }
-      }
-    }
-  }
-
-</script>
 
 </body>
 </html>
