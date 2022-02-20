@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html>
-<body>
-<form id="form">
 
-dec <input type="text" id="decCislo" name="dec"> <br>
-bin <input type="checkbox" id="7"name="bin" onclick="check()" value= "0111">7 (128)
-    <input type="checkbox" id="6"name="bin" onclick="check()" value="0110">6 (64)
-    <input type="checkbox" id="5"name="bin" onclick="check()" value="0101">5 (32)
-    <input type="checkbox" id="4"name="bin" onclick="check()" value= "0100">4 (16)
-    <input type="checkbox" id="3"name="bin" onclick="check()" value="0011">3 (8)
-    <input type="checkbox" id="2"name="bin" onclick="check()" value="0010">2 (4)
-    <input type="checkbox" id="1"name="bin" onclick="check()" value="0001">1 (2)
-    <input type="checkbox" id="0"name="bin" onclick="check()" value="0000">0 (1)
+<form [formGroup]="form">
+
+dec <input type="text" formControlName="decCislo" name="dec" [ngModel]="decCislo"> <br>
+bin <input type="checkbox" id="7"name="bin" [ngModel]="sedem" (change)="zaskrtni128($event)" value= "0111">7 (128)
+    <input type="checkbox" id="6"name="bin" [ngModel]="sest" (change)="zaskrtni64($event)" value="0110">6 (64)
+    <input type="checkbox" id="5"name="bin" [ngModel]="pat" (change)="zaskrtni32($event)" value="0101">5 (32)
+    <input type="checkbox" id="4"name="bin" [ngModel]="styri" (change)="zaskrtni16($event)" value= "0100">4 (16)
+    <input type="checkbox" id="3"name="bin" [ngModel]="tri" (change)="zaskrtni8($event)" value="0011">3 (8)
+    <input type="checkbox" id="2"name="bin" [ngModel]="dva" (change)="zaskrtni4($event)" value="0010">2 (4)
+    <input type="checkbox" id="1"name="bin" [ngModel]="jedna" (change)="zaskrtni2($event)" value="0001">1 (2)
+    <input type="checkbox" id="0"name="bin" [ngModel]="nula" (change)="zaskrtni1($event)" value="0000">0 (1)
 
 </form>
-
-</body>
-</html>
