@@ -1,14 +1,38 @@
+<!--
+binarne: {{binarne7}}
+binarne: {{binarne6}}
+binarne: {{binarne5}}
+binarne: {{binarne4}}
+binarne: {{binarne3}}
+binarne: {{binarne2}}
+binarne: {{binarne1}}
+binarne: {{binarne0}}
 
-<form [formGroup]="form">
+<br>
+cislo: {{cislo7}}
+cislo: {{cislo6}}
+cislo: {{cislo5}}
+cislo: {{cislo4}}
+cislo: {{cislo3}}
+cislo: {{cislo2}}
+cislo: {{cislo1}}
+cislo: {{cislo0}}
+-->
 
-dec <input type="text" formControlName="decCislo" name="dec" [ngModel]="decCislo"> <br>
-bin <input type="checkbox" id="7"name="bin" [ngModel]="sedem" (change)="zaskrtni128($event)" value= "0111">7 (128)
-    <input type="checkbox" id="6"name="bin" [ngModel]="sest" (change)="zaskrtni64($event)" value="0110">6 (64)
-    <input type="checkbox" id="5"name="bin" [ngModel]="pat" (change)="zaskrtni32($event)" value="0101">5 (32)
-    <input type="checkbox" id="4"name="bin" [ngModel]="styri" (change)="zaskrtni16($event)" value= "0100">4 (16)
-    <input type="checkbox" id="3"name="bin" [ngModel]="tri" (change)="zaskrtni8($event)" value="0011">3 (8)
-    <input type="checkbox" id="2"name="bin" [ngModel]="dva" (change)="zaskrtni4($event)" value="0010">2 (4)
-    <input type="checkbox" id="1"name="bin" [ngModel]="jedna" (change)="zaskrtni2($event)" value="0001">1 (2)
-    <input type="checkbox" id="0"name="bin" [ngModel]="nula" (change)="zaskrtni1($event)" value="0000">0 (1)
+<br>
+dec <input id ="aaa" (keyup)="obsah($event)" value="{{bin}}">
+<!--
+<p>Výpis obsahu inputu: {{dec}}</p>
+<p>Výpis obsahu inputu: {{bin}}</p>
+-->
+<br>
+bin
+<input type="checkbox" value= "0111" (click)= "kontrola7($event);">7
+<input type="checkbox" value= "0110" (click)= "kontrola6($event);">6
+<input type="checkbox" value= "0101" (click)= "kontrola5($event);">5
+<input type="checkbox" value= "0100" (click)= "kontrola4($event);">4
+<input type="checkbox" value= "0011" (click)= "kontrola3($event);">3
+<input type="checkbox" value= "0010" (click)= "kontrola2($event);">2
+<input type="checkbox" value= "0001" (click)= "kontrola1($event);">1
+<input type="checkbox" value= "0000" (click)= "kontrola0($event);">0
 
-</form>

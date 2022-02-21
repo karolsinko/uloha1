@@ -1,86 +1,83 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-
-
+import {mergeWith} from "rxjs";
+enum MENU { OSOBY = 0, KNIHY = 1, VYPOZICKY = 2 }
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  decCislo=0;
-  sedem=128;
-  sest=64;
-  pat=32;
-  styri=16;
-  tri=8;
-  dva=4;
-  jedna=2;
-  nula=1;
+  title = "aaa";
 
-  form:FormGroup;
+  binarne7 = parseInt("111", 2);
+  binarne6 = parseInt("110", 2);
+  binarne5 = parseInt("101", 2);
+  binarne4 = parseInt("100", 2);
+  binarne3 = parseInt("11", 2);
+  binarne2 = parseInt("10", 2);
+  binarne1 = parseInt("1", 2);
+  binarne0 = parseInt("0", 2);
+
+  cislo7 = 128;
+  cislo6 = 64;
+  cislo5 = 32;
+  cislo4 = 16;
+  cislo3 = 8;
+  cislo2 = 4;
+  cislo1 = 2;
+  cislo0 = 1;
+
+  bin: any = [];
+  dec: any = [];
+  form: FormGroup;
+
+
+
   constructor() {
-    this.form=new FormGroup({
-      decCislo: new FormControl(),
+    this.form = new FormGroup({
+      bin: new FormControl()
     })
   }
-  public zaskrtni128(event:any) {
-    if (event.target.checked) {
-      this.decCislo = this.decCislo + this.sedem;
-    } else {
-      this.decCislo= this.decCislo - this.sedem;
-    }
+
+  obsah(event: any) {
+    this.dec = event.target.value;
+
   }
 
-  public zaskrtni64(event:any) {
-    if (event.target.checked) {
-      this.decCislo = this.decCislo + this.sest;
-    } else {
-      this.decCislo= this.decCislo - this.sest;
-    }
+  /*public prevodDecNaBin(){
+    this.bin = ((this.dec).toString(2));
+  }*/
+  kontrola7(event: any){
+    this.bin = event.target.value;
+    /*if(this.bin == this.binarne7){
+     event.target.checked;*/
   }
-
-  public zaskrtni32(event:any) {
-    if (event.target.checked) {
-      this.decCislo = this.decCislo + this.pat;
-    } else {
-      this.decCislo= this.decCislo - this.pat;
-    }
+  kontrola6(event: any) {
+    this.bin = event.target.value;
   }
-  public zaskrtni16(event:any) {
-    if (event.target.checked) {
-      this.decCislo = this.decCislo + this.styri;
-    } else {
-      this.decCislo= this.decCislo - this.styri;
-    }
+  kontrola5(event: any) {
+    this.bin = event.target.value;
   }
-  public zaskrtni8(event:any) {
-    if (event.target.checked) {
-      this.decCislo = this.decCislo + this.tri;
-    } else {
-      this.decCislo= this.decCislo - this.tri;
-    }
+  kontrola4(event: any) {
+    this.bin = event.target.value;
   }
-  public zaskrtni4(event:any) {
-    if (event.target.checked) {
-      this.decCislo = this.decCislo + this.dva;
-    } else {
-      this.decCislo= this.decCislo - this.dva;
-    }
+  kontrola3(event: any) {
+    this.bin = event.target.value;
   }
-  public zaskrtni2(event:any) {
-    if (event.target.checked) {
-      this.decCislo = this.decCislo + this.jedna;
-    } else {
-      this.decCislo= this.decCislo - this.jedna;
-    }
+  kontrola2(event: any) {
+    this.bin = event.target.value;
   }
-  public zaskrtni1(event:any) {
-    if (event.target.checked) {
-      this.decCislo = this.decCislo + this.nula;
-    } else {
-      this.decCislo= this.decCislo - this.nula;
-    }
+  kontrola1(event: any) {
+    this.bin = event.target.value;
+  }
+  kontrola0(event: any) {
+    this.bin = event.target.value;
   }
 
 }
+
+
+
+
+
