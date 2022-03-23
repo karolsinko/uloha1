@@ -4,9 +4,9 @@ html {
 }
 
 input[type=text] {
-  background-color: #gray;
+  background-color: gray;
   width: 20%;
-  margin: 8px 0;
+  margin: 10px 0;
   box-sizing: border-box;
 }
 
